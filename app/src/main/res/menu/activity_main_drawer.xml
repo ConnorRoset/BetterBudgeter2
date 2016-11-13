@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_view_budget"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/view_budget" />
+        <item
+            android:id="@+id/nav_add_purchase"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/add_a_purchase"
+            />
+        <item
+            android:id="@+id/nav_view_expenses"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/view_expenses" />
+        <item
+            android:id="@+id/nav_view_purchases"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/view_purchases" />
+        <item
+            android:id="@+id/nav_manage_expenses"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/manage_expenses" />
+        <item
+            android:id="@+id/nav_manage_incomes"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/manage_incomes"
+            />
+    </group>
+
+
+</menu>
