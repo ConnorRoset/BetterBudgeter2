@@ -12,7 +12,7 @@ public class Purchase {
     public static final String DRINK = "Drink";
     public static final String FOOD = "Food";
     public static final String OTHER_PURCHASE = "Other";
-
+    public static final int NUMBER_OF_PURCHASE_TYPES = 3;
 
     //class information
     private float amount;

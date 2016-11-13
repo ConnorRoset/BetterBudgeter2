@@ -13,8 +13,8 @@ import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.MainActivity;
 
 public class Budget {
     private ArrayList<Income> incomes = new ArrayList<>();
-    private ArrayList<MandatoryExpense>mandatoryExpenses = new ArrayList<>();
-    private ArrayList<NonMandatoryExpense>nonMandatoryExpenses = new ArrayList<>();
+    private ArrayList<Bill>bills = new ArrayList<>();
+    private ArrayList<Luxury>luxuries = new ArrayList<>();
     private ArrayList<Purchase>purchases = new ArrayList<>();
     private float budgetRemaining;
 
@@ -27,25 +27,25 @@ public class Budget {
             incomes.add(new Income(20.00f, Income.OTHER_INCOME));
             incomes.add(new Income(30.00f, Income.SALARY));
             incomes.add(new Income(30.00f, Income.SALARY));
-            mandatoryExpenses.add(new MandatoryExpense(21.00f, MandatoryExpense.ELECTRIC_BILL));
-            nonMandatoryExpenses.add(new NonMandatoryExpense(34.00f, NonMandatoryExpense.EATING_OUT));
+            bills.add(new Bill(21.00f, Bill.OTHER_BILL));
+//            .add(new NonMandatoryExpense(34.00f, NonMandatoryExpense.EATING_OUT));
 
 
 
         }
     }
 
-    public float mandatoryExpenseTotal(){
+    public float billTotal(){
         float temp = 0;
-        for(int i = 0; i<mandatoryExpenses.size(); i++){
-            temp += mandatoryExpenses.get(i).getAmount();
+        for(int i = 0; i<bills.size(); i++){
+            temp += bills.get(i).getAmount();
         }
         return temp;
     }
-    public float nonMandatoryExpensetotal(){
+    public float luxuryTotal(){
         float temp = 0;
-        for(int i = 0; i<nonMandatoryExpenses.size(); i++){
-            temp += nonMandatoryExpenses.get(i).getAmount();
+        for(int i = 0; i<luxuries.size(); i++){
+            temp += luxuries.get(i).getAmount();
         }
         return temp;
     };
@@ -61,11 +61,11 @@ public class Budget {
     public ArrayList<Income> getIncomes(){
         return incomes;
     }
-    public ArrayList<MandatoryExpense> getMandatoryExpenses(){
-        return mandatoryExpenses;
+    public ArrayList<Bill> getBills(){
+        return bills;
     }
-    public ArrayList<NonMandatoryExpense> getNonMandatoryExpenses(){
-        return nonMandatoryExpenses;
+    public ArrayList<Luxury> getLuxuries(){
+        return luxuries;
     }
     public ArrayList<Purchase> getPurchases(){
         return purchases;
@@ -81,28 +81,33 @@ public class Budget {
             incomes.remove(income);
         }
     }
-    public void addMandatoryExpense(MandatoryExpense mandatoryExpense){
-        mandatoryExpenses.add(mandatoryExpense);
-    }
-    public void removeMandatoryExpense(MandatoryExpense mandatoryExpense){
-        //find that MandExpense, remove it from list
-        if(mandatoryExpenses.contains(mandatoryExpense)){
-            mandatoryExpenses.remove(mandatoryExpense);
-        }
-    }
-    public void addNonMandatoryExpense(NonMandatoryExpense nonMandatoryExpense){
-        nonMandatoryExpenses.add(nonMandatoryExpense);
-    }
-    public void removeNonMandatoryExpense(NonMandatoryExpense nonMandatoryExpense){
-        //find the nonMandExpense, remove it from internal list
-        if(nonMandatoryExpenses.contains(nonMandatoryExpense)){
-            nonMandatoryExpenses.remove(nonMandatoryExpense);
-        }
-    }
+
     public void addPurchase(Purchase purchase){
         purchases.add(purchase);
     }
+    public void removePurchase(Purchase purchase){
+        if(purchases.contains(purchase)){
+            purchases.remove(purchase);
+        }
+    }
 
+    public void addBill(Bill bill){
+        bills.add(bill);
+    }
+    public void removeBill(Bill bill){
+        if(bills.contains(bill)){
+            bills.remove(bill);
+        }
+    }
+
+    public void addLuxury(Luxury luxury){
+        luxuries.add(luxury);
+    }
+    public void removeLuxury(Luxury luxury){
+        if(luxuries.contains(luxury)){
+            luxuries.remove(luxury);
+        }
+    }
 
     //will need to call in on create method of main to see if budget needs to be refreshed
     public void resetMonthlyBudget(){

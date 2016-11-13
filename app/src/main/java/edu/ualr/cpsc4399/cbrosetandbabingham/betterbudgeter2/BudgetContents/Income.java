@@ -10,7 +10,7 @@ public class Income {
     public static final String STIPENDS_GRANTS_AID = "Stipends/Grants/Aid";
     public static final String SCHOLARSHIPS = "Scholarships";
     public static final String OTHER_INCOME = "Other";
-
+    public static final int NUMBER_OF_INCOME_TYPES = 5;
     private float amount;
     private String type;
 
