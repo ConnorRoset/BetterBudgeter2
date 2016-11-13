@@ -12,4 +12,8 @@
     <string name="view_purchases">View Purchases</string>
     <string name="manage_expenses">Manage Expenses</string>
     <string name="manage_incomes">Manage incomes</string>
+    <string name="add_a_luxury">Add a luxury</string>
+    <string name="manage_bills">Manage bills</string>
+    <string name="view_bills">View bills</string>
+    <string name="view_luxuries">View Luxuries</string>
 </resources>

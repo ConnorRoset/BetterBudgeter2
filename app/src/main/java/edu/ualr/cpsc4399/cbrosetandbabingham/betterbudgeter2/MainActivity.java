@@ -16,12 +16,13 @@ import android.view.MenuItem;
 import com.google.gson.Gson;
 
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Budget;
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.AddLuxuryFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.AddPurchaseFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ManageExpensesFragment;
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ManageBillsFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ManageIncomesFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.MenuOptionsFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewBudgetFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewExpensesFragment;
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewLuxuriesFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewPurchasesFragment;
 
 
@@ -120,15 +121,19 @@ public class MainActivity extends AppCompatActivity
             fragment = new ViewBudgetFragment();
         } else if (id == R.id.nav_add_purchase) {
             fragment = new AddPurchaseFragment();
-        } else if (id == R.id.nav_view_expenses) {
-            fragment = new ViewExpensesFragment();
-        } else if (id == R.id.nav_manage_expenses) {
-            fragment = new ManageExpensesFragment();
+        } else if (id == R.id.nav_add_luxury) {
+            fragment = new AddLuxuryFragment();
+        } else if (id == R.id.nav_manage_bills) {
+            fragment = new ManageBillsFragment();
         } else if (id == R.id.nav_manage_incomes) {
             fragment = new ManageIncomesFragment();
         } else if (id == R.id.nav_view_purchases) {
             fragment = new ViewPurchasesFragment();
-        }
+        } else if(id == R.id.nav_view_luxuries){
+            fragment = new ViewLuxuriesFragment();
+        } //else if (id == R.id.nav_view_bills){
+//            fragment = new ViewBillsFragment();
+//        }
 
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();

@@ -12,17 +12,28 @@
             android:title="@string/add_a_purchase"
             />
         <item
-            android:id="@+id/nav_view_expenses"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/view_expenses" />
+            android:id="@+id/nav_add_luxury"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/add_a_luxury"
+            />
         <item
             android:id="@+id/nav_view_purchases"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/view_purchases" />
         <item
-            android:id="@+id/nav_manage_expenses"
+            android:id="@+id/nav_view_luxuries"
+            android:title="@string/view_luxuries"
+            android:icon="@drawable/ic_menu_camera"
+            />
+        <!--<item-->
+            <!--android:id="@+id/nav_view_bills"-->
+            <!--android:icon="@drawable/ic_menu_gallery"-->
+            <!--android:title="@string/view_bills" />-->
+
+        <item
+            android:id="@+id/nav_manage_bills"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/manage_expenses" />
+            android:title="@string/manage_bills" />
         <item
             android:id="@+id/nav_manage_incomes"
             android:icon="@drawable/ic_menu_camera"

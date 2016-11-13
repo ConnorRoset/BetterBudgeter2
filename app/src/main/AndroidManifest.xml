@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManageExpensesActivities.AddAnExpenseActivity" />
-        <activity android:name=".ManageExpensesActivities.RemoveAnExpenseActivity" />
+        <activity android:name=".ManageBillsActivities.AddABillActivity" />
+        <activity android:name=".ManageBillsActivities.RemoveABillActivity" />
         <activity android:name=".ManageIncomesActivities.AddIncomeActivity" />
         <activity android:name=".ManageIncomesActivities.RemoveIncomeActivity"></activity>
     </application>
