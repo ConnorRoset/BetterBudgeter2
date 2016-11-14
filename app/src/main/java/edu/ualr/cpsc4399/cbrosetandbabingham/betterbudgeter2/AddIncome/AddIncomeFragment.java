@@ -1,4 +1,4 @@
-package edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddBillFragment;
+package edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddIncome;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,13 +12,13 @@ import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.R;
  * Created by connorroset on 11/14/16.
  */
 
-public class AddBillFragment extends Fragment {
+public class AddIncomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle(getResources().getString(R.string.add_bill));
-        return inflater.inflate(R.layout.fragment_add_bill, container, false);
+        getActivity().setTitle(getResources().getString(R.string.add_income));
+        return inflater.inflate(R.layout.fragment_add_income, container, false);
     }
 
     @Override

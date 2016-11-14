@@ -35,6 +35,4 @@
             android:title="@string/view_incomes"
             />
     </group>
-
-
 </menu>
