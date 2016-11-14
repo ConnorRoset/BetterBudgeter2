@@ -17,4 +17,5 @@
     <string name="view_bills">View bills</string>
     <string name="view_luxuries">View Luxuries</string>
     <string name="view_incomes">View incomes</string>
+    <string name="submit">Submit</string>
 </resources>

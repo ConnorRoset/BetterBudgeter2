@@ -25,8 +25,6 @@
             android:title="@string/view_luxuries"
             android:icon="@drawable/ic_menu_camera"
             />
-
-
         <item
             android:id="@+id/nav_view_bills"
             android:icon="@drawable/ic_menu_manage"

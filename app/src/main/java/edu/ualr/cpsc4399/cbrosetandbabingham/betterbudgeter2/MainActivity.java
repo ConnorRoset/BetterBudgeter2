@@ -15,8 +15,10 @@ import android.view.MenuItem;
 
 import com.google.gson.Gson;
 
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddPurchase.AddPurchaseFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Budget;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewBudget.ViewBudgetFragment;
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewPurchases.ViewPurchasesFragment;
 
 
 public class MainActivity extends AppCompatActivity
@@ -100,21 +102,23 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_view_budget) {
             //view budget fragment
-            ViewBudgetFragment fragment = new ViewBudgetFragment();
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
+//            ViewBudgetFragment fragment = new ViewBudgetFragment();
+            fragmentTransaction.replace(R.id.fragment_container, new ViewBudgetFragment());
         }
-//        } else if (id == R.id.nav_add_purchase){
-//            //add purchase fragment
-//
-//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+         else if (id == R.id.nav_add_purchase) {
+            //add purchase fragment
+            //AddPurchaseFragment fragment = new AddPurchaseFragment();
+            fragmentTransaction.replace(R.id.fragment_container, new AddPurchaseFragment());
+        }
 //        } else if (id == R.id.nav_add_luxury){
 //            //add luxury fragment
 //
 //            fragmentTransaction.replace(R.id.fragment_container, fragment);
-//        } else if (id == R.id.nav_view_purchases){
-//            //view purchases fragment
-//
-//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+        else if (id == R.id.nav_view_purchases) {
+            //view purchases fragment
+            //ViewPurchasesFragment fragment = new ViewPurchasesFragment();
+            fragmentTransaction.replace(R.id.fragment_container, new ViewPurchasesFragment());
+        }
 //        } else if(id == R.id.nav_view_luxuries){
 //            //view luxuries fragment
 //
