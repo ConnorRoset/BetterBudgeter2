@@ -19,6 +19,7 @@ import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddLuxury.AddLuxury
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddPurchase.AddPurchaseFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Budget;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewBudget.ViewBudgetFragment;
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewLuxuries.ViewLuxuriesFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewPurchases.ViewPurchasesFragment;
 
 
@@ -117,10 +118,11 @@ public class MainActivity extends AppCompatActivity
             //view purchases fragment
             fragmentTransaction.replace(R.id.fragment_container, new ViewPurchasesFragment());
         }
-//        } else if(id == R.id.nav_view_luxuries){
-//            //view luxuries fragment
-//
-//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+        else if(id == R.id.nav_view_luxuries) {
+            //view luxuries fragment
+
+            fragmentTransaction.replace(R.id.fragment_container, new ViewLuxuriesFragment());
+        }
 //        } else if(id == R.id.nav_view_bills){
 //            //view bills fragment
 //

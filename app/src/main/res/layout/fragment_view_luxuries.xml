@@ -6,5 +6,5 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/view_purchases_list_of_purchases_recycler_view"/>
+        android:id="@+id/view_purchases_list_of_luxuries_recycler_view"/>
 </LinearLayout>
