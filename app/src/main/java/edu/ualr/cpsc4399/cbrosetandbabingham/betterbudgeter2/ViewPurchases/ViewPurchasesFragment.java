@@ -17,8 +17,8 @@ public class ViewPurchasesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle(getResources().getString(R.string.add_a_purchase));
-        return inflater.inflate(R.layout.fragment_add_purchase, container, false);
+        getActivity().setTitle(getResources().getString(R.string.view_purchases));
+        return inflater.inflate(R.layout.fragment_view_purchases, container, false);
     }
 
     @Override
