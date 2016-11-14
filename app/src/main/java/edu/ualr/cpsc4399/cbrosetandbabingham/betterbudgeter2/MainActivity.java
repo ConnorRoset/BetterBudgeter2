@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-//        if(budget == null) {
-//            budget = new Budget(true);
-//            saveBudget();
-//        }
+        if(budget == null) {
+            budget = new Budget(true);
+            saveBudget();
+        }
         //will eventually need to change to standard budget constructor
 
 //        else
