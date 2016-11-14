@@ -16,24 +16,17 @@ import android.view.MenuItem;
 import com.google.gson.Gson;
 
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Budget;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.AddLuxuryFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.AddPurchaseFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ManageBillsFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ManageIncomesFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.MenuOptionsFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewBudgetFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewLuxuriesFragment;
-import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.NavFragments.ViewPurchasesFragment;
-
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewBudget.ViewBudgetFragment;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //Fragment transaction to move the activity around
-    MenuOptionsFragment fragment = new MenuOptionsFragment();
+   // MenuOptionsFragment fragment = new MenuOptionsFragment();
     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
     public Budget budget;
+
     //SharedPreferences mPrefs = getPreferences(MODE_PRIVATE);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +46,13 @@ public class MainActivity extends AppCompatActivity
         {
             openBudget();
         }
+
+        //make fragment of type view budget
+        ViewBudgetFragment fragment = new ViewBudgetFragment();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+
+        //fix the drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -90,25 +90,6 @@ public class MainActivity extends AppCompatActivity
     public Budget getBudget(){
         return this.budget;
     }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -118,24 +99,38 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_view_budget) {
-            fragment = new ViewBudgetFragment();
-        } else if (id == R.id.nav_add_purchase) {
-            fragment = new AddPurchaseFragment();
-        } else if (id == R.id.nav_add_luxury) {
-            fragment = new AddLuxuryFragment();
-        } else if (id == R.id.nav_manage_bills) {
-            fragment = new ManageBillsFragment();
-        } else if (id == R.id.nav_manage_incomes) {
-            fragment = new ManageIncomesFragment();
-        } else if (id == R.id.nav_view_purchases) {
-            fragment = new ViewPurchasesFragment();
-        } else if(id == R.id.nav_view_luxuries){
-            fragment = new ViewLuxuriesFragment();
-        } //else if (id == R.id.nav_view_bills){
-//            fragment = new ViewBillsFragment();
+            //view budget fragment
+            ViewBudgetFragment fragment = new ViewBudgetFragment();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+        }
+//        } else if (id == R.id.nav_add_purchase){
+//            //add purchase fragment
+//
+//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+//        } else if (id == R.id.nav_add_luxury){
+//            //add luxury fragment
+//
+//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+//        } else if (id == R.id.nav_view_purchases){
+//            //view purchases fragment
+//
+//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+//        } else if(id == R.id.nav_view_luxuries){
+//            //view luxuries fragment
+//
+//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+//        } else if(id == R.id.nav_view_bills){
+//            //view bills fragment
+//
+//            fragmentTransaction.replace(R.id.fragment_container, fragment);
+//        } else if (id == R.id.nav_view_incomes){
+//            //View Incomes fragment
+//
+//            fragmentTransaction.replace(R.id.fragment_container, fragment);
 //        }
 
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+       // fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -17,11 +17,16 @@ public class Bill {
     public Bill(float amount){
         this.amount = amount;
         type = Bill.OTHER_BILL;
+        paid = false;
     }
     public Bill(float amount, String type){
         this.amount = amount;
         this.type = type;
+        paid = false;
     }
     public float getAmount(){return amount;}
     public String getType(){return type;}
+    public boolean isPaid(){
+        return paid;
+    }
 }

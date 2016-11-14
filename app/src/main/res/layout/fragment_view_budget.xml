@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Purchases: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_budget_purchases_text_view" />
+
+    <TextView
+        android:text="amount left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_budget_purchases_amount_remaining_text_view" />
+
+    <TextView
+        android:text="Luxuries: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_budget_luxuries_text_view" />
+
+    <TextView
+        android:text="amount left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_budget_luxuries_amount_remaining_text_view" />
+
+    <TextView
+        android:text="Unpaid bills: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_budget_unpaid_bills_text_view" />
+
+    <TextView
+        android:text="x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_budget_unpaid_bills_number_remaining_text_view" />
+</LinearLayout>

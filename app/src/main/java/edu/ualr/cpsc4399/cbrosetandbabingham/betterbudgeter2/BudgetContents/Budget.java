@@ -15,8 +15,18 @@ public class Budget {
     private ArrayList<Income> incomes = new ArrayList<>();
     private ArrayList<Bill>bills = new ArrayList<>();
     private ArrayList<Luxury>luxuries = new ArrayList<>();
+
+    public float getBudgetRemainingForPurchases() {
+        return budgetRemainingForPurchases;
+    }
+
+    public float getBudgetRemainingForLuxuries() {
+        return budgetRemainingForLuxuries;
+    }
+
     private ArrayList<Purchase>purchases = new ArrayList<>();
-    private float budgetRemaining;
+    private float budgetRemainingForPurchases;
+    private float budgetRemainingForLuxuries;
 
     public Budget(){
 
@@ -71,7 +81,15 @@ public class Budget {
         return purchases;
     }
 
-
+    public int getNumberUnPaidBills(){
+        int count = 0;
+        for(Bill bill : bills){
+            if(bill.isPaid()){
+                count++;
+            }
+        }
+        return count;
+    }
     public void addIncome(Income income){
         incomes.add(income);
     }
