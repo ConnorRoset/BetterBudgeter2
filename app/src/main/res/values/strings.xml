@@ -18,4 +18,7 @@
     <string name="view_luxuries">View Luxuries</string>
     <string name="view_incomes">View incomes</string>
     <string name="submit">Submit</string>
+    <string name="pay">Pay</string>
+    <string name="remove_selected">Remove selected</string>
+    <string name="add_bill">Add bill</string>
 </resources>
