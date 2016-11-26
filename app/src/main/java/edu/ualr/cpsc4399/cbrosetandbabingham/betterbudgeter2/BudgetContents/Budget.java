@@ -30,6 +30,7 @@ public class Budget {
     public boolean isMade = false;
     public Budget(){
 
+
     }
     public Budget(Boolean makeTestBudget){
         if(makeTestBudget){
@@ -41,7 +42,8 @@ public class Budget {
             purchases.add(new Purchase(15.00f, Purchase.OTHER_PURCHASE));
 
 
-            budgetRemainingForPurchases = ((0.75f)*incomeTotal()) - purchaseTotal();
+            budgetRemainingForPurchases = ((0.30f)*incomeTotal()) - purchaseTotal();
+            budgetRemainingForLuxuries = (((0.20f)*incomeTotal()) - luxuryTotal());
 //            .add(new NonMandatoryExpense(34.00f, NonMandatoryExpense.EATING_OUT));
 
             isMade = true;
@@ -93,7 +95,7 @@ public class Budget {
     public int getNumberUnPaidBills(){
         int count = 0;
         for(Bill bill : bills){
-            if(bill.isPaid()){
+            if(!bill.isPaid()){
                 count++;
             }
         }
