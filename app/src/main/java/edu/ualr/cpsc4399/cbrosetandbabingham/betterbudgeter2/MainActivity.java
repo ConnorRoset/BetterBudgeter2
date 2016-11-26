@@ -41,17 +41,20 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //saveBudget();
+       // openBudget();
+        //open the budget
+        //makeBudgetreal quick
+//        budget = new Budget(true);
+//        saveBudget();
 
-        if(budget == null) {
+        if(openBudget()){
+
+        } else{
             budget = new Budget(true);
             saveBudget();
         }
         //will eventually need to change to standard budget constructor
-
-//        else
-        {
-            openBudget();
-        }
 
         //make fragment of type view budget
         ViewBudgetFragment fragment = new ViewBudgetFragment();
@@ -78,11 +81,16 @@ public class MainActivity extends AppCompatActivity
         prefsEditor.commit();
     }
 
-    public void openBudget(){
+    public boolean openBudget(){
         //open the budget from storage
         Gson gson = new Gson();
         String json =  getPreferences(MODE_PRIVATE).getString("BUDGET_SAVE", "");
         budget = gson.fromJson(json, Budget.class);
+        if(budget.isMade){
+            return true;
+        } else{
+            return false;
+        }
     }
     @Override
     public void onBackPressed() {

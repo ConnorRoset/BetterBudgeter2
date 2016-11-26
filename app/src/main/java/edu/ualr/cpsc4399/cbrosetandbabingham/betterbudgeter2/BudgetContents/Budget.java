@@ -25,9 +25,9 @@ public class Budget {
     }
 
     private ArrayList<Purchase>purchases = new ArrayList<>();
-    private float budgetRemainingForPurchases;
+    private float budgetRemainingForPurchases ;
     private float budgetRemainingForLuxuries;
-
+    public boolean isMade = false;
     public Budget(){
 
     }
@@ -38,13 +38,22 @@ public class Budget {
             incomes.add(new Income(30.00f, Income.SALARY));
             incomes.add(new Income(30.00f, Income.SALARY));
             bills.add(new Bill(21.00f, Bill.OTHER_BILL));
+            purchases.add(new Purchase(15.00f, Purchase.OTHER_PURCHASE));
+
+
+            budgetRemainingForPurchases = ((0.75f)*incomeTotal()) - purchaseTotal();
 //            .add(new NonMandatoryExpense(34.00f, NonMandatoryExpense.EATING_OUT));
 
-
-
+            isMade = true;
         }
     }
-
+    public float incomeTotal(){
+        float temp = 0f;
+        for(int i = 0; i<incomes.size(); i++){
+            temp += incomes.get(i).getAmount();
+        }
+        return temp;
+    }
     public float billTotal(){
         float temp = 0;
         for(int i = 0; i<bills.size(); i++){

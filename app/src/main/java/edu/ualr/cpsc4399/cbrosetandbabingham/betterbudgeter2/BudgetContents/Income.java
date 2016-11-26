@@ -22,7 +22,7 @@ public class Income {
         this.amount = amount;
         this.type = type;
     }
-    private float getAmount(){return amount;}
+    public float getAmount(){return amount;}
     public String getType(){return type;}
 
 }

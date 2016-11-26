@@ -18,10 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManageBills.AddABillActivity" />
-        <activity android:name=".ManageBills.RemoveABillActivity" />
-        <activity android:name=".ManageIncomes.AddIncomeActivity" />
-        <activity android:name=".ManageIncomes.RemoveIncomeActivity"></activity>
+
     </application>
 
 </manifest>

@@ -29,7 +29,7 @@ public class ViewBudgetFragment extends Fragment {
 
         //purchases
         TextView purchaseBudget = (TextView) getActivity().findViewById(R.id.view_budget_purchases_amount_remaining_text_view);
-        purchaseBudget.setText(String.valueOf(((MainActivity)getActivity()).getBudget().getBudgetRemainingForLuxuries()));
+        purchaseBudget.setText(String.valueOf(((MainActivity)getActivity()).getBudget().getBudgetRemainingForPurchases()));
 
         //luxuries
         TextView luxuryBudget = (TextView) getActivity().findViewById(R.id.view_budget_luxuries_amount_remaining_text_view);

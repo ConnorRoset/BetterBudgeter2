@@ -2,10 +2,14 @@ package edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewIncomes;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddBill.AddBillFragment;
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddIncome.AddIncomeFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.R;
 
 /**
@@ -24,6 +28,15 @@ public class ViewIncomesFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        Button addIncome = (Button)getActivity().findViewById(R.id.view_incomes_add_button);
+        addIncome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                AddIncomeFragment aif = new AddIncomeFragment();
+                ft.replace(R.id.fragment_container, aif);
+                ft.commit();
+            }
+        });
     }
 }
