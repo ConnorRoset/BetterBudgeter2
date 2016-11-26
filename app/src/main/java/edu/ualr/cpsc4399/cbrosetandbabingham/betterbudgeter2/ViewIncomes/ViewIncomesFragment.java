@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddBill.AddBillFragment;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.AddIncome.AddIncomeFragment;
@@ -21,6 +22,7 @@ import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.R;
 
 public class ViewIncomesFragment extends Fragment {
     RecyclerView rv;
+    ViewIncomeRVAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,12 +38,11 @@ public class ViewIncomesFragment extends Fragment {
 
         rv =  (RecyclerView)getActivity().findViewById(R.id.view_incomes_list_of_incomes_recycler_view);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv.setHasFixedSize(true);
+//        rv.setHasFixedSize(true);
 
 
-        ViewIncomeRVAdapter adapter = new ViewIncomeRVAdapter(((MainActivity)getActivity()).getBudget().getIncomes());
+        adapter = new ViewIncomeRVAdapter(((MainActivity)getActivity()).getBudget().getIncomes());
         rv.setAdapter(adapter);
-
         Button addIncome = (Button)getActivity().findViewById(R.id.view_incomes_add_button);
         addIncome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,17 @@ public class ViewIncomesFragment extends Fragment {
                 AddIncomeFragment aif = new AddIncomeFragment();
                 ft.replace(R.id.fragment_container, aif);
                 ft.commit();
+            }
+        });
+
+        Button removeIncome = (Button)getActivity().findViewById(R.id.view_incomes_delete_button);
+        removeIncome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //(MainActivity)((MainActivity) getActivity()).getBudget().removeIncome();
+                Toast.makeText(getContext(), "clicked", Toast.LENGTH_SHORT).show();
+
+
             }
         });
     }
