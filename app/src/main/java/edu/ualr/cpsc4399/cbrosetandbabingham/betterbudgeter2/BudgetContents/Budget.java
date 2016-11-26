@@ -44,7 +44,7 @@ public class Budget {
 
             budgetRemainingForPurchases = ((0.30f)*incomeTotal()) - purchaseTotal();
             budgetRemainingForLuxuries = (((0.20f)*incomeTotal()) - luxuryTotal());
-//            .add(new NonMandatoryExpense(34.00f, NonMandatoryExpense.EATING_OUT));
+
 
             isMade = true;
         }
