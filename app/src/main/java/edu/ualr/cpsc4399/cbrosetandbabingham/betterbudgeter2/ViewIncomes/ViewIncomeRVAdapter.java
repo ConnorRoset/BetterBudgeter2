@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class ViewIncomeRVAdapter extends RecyclerView.Adapter<ViewIncomeRVAdapte
             cv = (CardView) itemView.findViewById(R.id.card_view);
             type = (TextView) itemView.findViewById(R.id.type_card_view);
             amount = (TextView) itemView.findViewById(R.id.amount_card_view);
-            paid = (TextView) itemView.findViewById(R.id.paid_card_view);
+            paid = (ToggleButton) itemView.findViewById(R.id.paid_card_view);
             delete = (Button) itemView.findViewById(R.id.delete_button_card_view);
 //            cv.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -71,6 +72,7 @@ public class ViewIncomeRVAdapter extends RecyclerView.Adapter<ViewIncomeRVAdapte
         viewIncomeViewHolder.type.setText(incomes.get(i).getType());
         viewIncomeViewHolder.amount.setText(String.valueOf(incomes.get(i).getAmount()));
         viewIncomeViewHolder.paid.setText("");
+        viewIncomeViewHolder.paid.setVisibility(View.INVISIBLE);
         viewIncomeViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,12 +80,6 @@ public class ViewIncomeRVAdapter extends RecyclerView.Adapter<ViewIncomeRVAdapte
                 notifyDataSetChanged();
             }
         });
-//        viewIncomeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//               viewIncomeViewHolder.cv.setCardBackgroundColor(Color.BLUE);
-//            }
-//        });
 
 
     }

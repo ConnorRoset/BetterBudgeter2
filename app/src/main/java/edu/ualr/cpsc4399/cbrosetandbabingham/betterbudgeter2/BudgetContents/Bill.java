@@ -1,5 +1,7 @@
 package edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents;
 
+
+
 /**
  * Created by connorroset on 11/13/16.
  */
@@ -44,5 +46,10 @@ public class Bill {
     public String getType(){return type;}
     public boolean isPaid(){
         return paid;
+    }
+    public String [] getAllTypes(){
+
+        return new String[]{UTILITIES_BILL, GROCERIES_BILL, SUBSCRIPTIONS_BILL, INSURANCE_BILL, PAYMENT_BILL, MOBILE_BILL, INTERNET_BILL, TUITION_BILL, RENT_BILL, FUEL_BILL, MEDICAL_BILL, MEMBERSHIP_BILL, SERVICES_BILL};
+
     }
 }

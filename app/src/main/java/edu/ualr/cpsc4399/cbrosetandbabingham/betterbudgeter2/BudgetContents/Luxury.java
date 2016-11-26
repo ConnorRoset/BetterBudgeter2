@@ -32,4 +32,7 @@ public class Luxury {
     }
     public float getAmount(){return amount;}
     public String getType(){return type;}
+    public String [] getAllTypes(){
+        return new String[]{SUBSCRIPTIONS_LUXURY, HOBBY_LUXURY, MEMBERSHIP_LUXURY,CAR_PARTS_LUXURY,ALCOHOL_LUXURY,SNACKS_LUXURY,CLOTHING_LUXURY,OTHER_LUXURY};
+    }
 }

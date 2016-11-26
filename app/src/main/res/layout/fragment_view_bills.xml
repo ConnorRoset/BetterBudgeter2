@@ -7,22 +7,22 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_weight="9"
         android:id="@+id/view_bills_list_of_bills_recycler_view"/>
 
-    <Button
-        android:text="@string/pay"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/view_bills_pay_button" />
+    <!--<Button-->
+        <!--android:text="@string/pay"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:id="@+id/view_bills_pay_button" />-->
 
-    <Button
-        android:text="@string/remove_selected"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/view_bills_delete_button" />
+    <!--<Button-->
+        <!--android:text="@string/remove_selected"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:id="@+id/view_bills_delete_button" />-->
 
     <Button
         android:text="@string/add_bill"

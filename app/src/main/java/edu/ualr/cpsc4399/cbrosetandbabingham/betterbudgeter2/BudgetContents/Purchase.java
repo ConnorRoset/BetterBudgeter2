@@ -39,4 +39,7 @@ public class Purchase {
     }
     public float getAmount(){return amount;}
     public String getType(){return type;}
+    public String [] getAllTypes(){
+        return new String[]{REPAIRS_PURCHASE,MEDICAL_PURCHASE,CAR_PARTS_PURCHASE,SUPPLIES_PURCHASE,ALCOHOL_PURCHASE,FUEL_PURCHASE,SNACKS_PURCHASE,SERVICES_PURCHASE,GIFT_PURCHASE,CLOTHING_BILL,GAMES_BILL,DRINK_PURCHASE,FOOD_PURCHASE};
+    }
 }

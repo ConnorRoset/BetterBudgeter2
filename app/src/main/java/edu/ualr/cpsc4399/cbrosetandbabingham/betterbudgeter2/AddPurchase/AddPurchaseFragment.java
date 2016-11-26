@@ -17,6 +17,7 @@ public class AddPurchaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         getActivity().setTitle(getResources().getString(R.string.add_a_purchase));
         return inflater.inflate(R.layout.fragment_add_purchase, container, false);
     }
@@ -28,6 +29,7 @@ public class AddPurchaseFragment extends Fragment {
         //convert it to string
         //extract text from text field
         //button.onclick = add purchase to top of purchase list
+        
     }
 
 }

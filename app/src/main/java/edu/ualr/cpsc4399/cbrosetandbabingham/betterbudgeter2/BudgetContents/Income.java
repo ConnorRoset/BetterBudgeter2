@@ -24,5 +24,7 @@ public class Income {
     }
     public float getAmount(){return amount;}
     public String getType(){return type;}
-
+    public String [] getAllTypes(){
+        return new String[] {SALARY, MONTHLY_ALLOWANCE, STIPENDS_GRANTS_AID,SCHOLARSHIPS,OTHER_INCOME};
+    }
 }
