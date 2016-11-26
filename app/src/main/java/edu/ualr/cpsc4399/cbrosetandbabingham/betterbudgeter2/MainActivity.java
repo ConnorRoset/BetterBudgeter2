@@ -43,26 +43,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //prepare the recyclerview for the fragments
-
-        //saveBudget();
-       // openBudget();
-        //open the budget
-        //makeBudgetreal quick
-//        budget = new Budget(true);
-//        saveBudget();
-//        recyclerView = (RecyclerView) findViewById(R.id.view_incomes_list_of_incomes_recycler_view);
-//        view_incomes_list_of_incomes_recycler_viewrecyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-//saveBudget();
-//        budget = new Budget(true);
-//        saveBudget();
         openBudget();
-//        if(!budget.isMade)
-//        {
-//            budget = new Budget(true);
-//            saveBudget();
-//        }
+
         //will eventually need to change to standard budget constructor
 
         //make fragment of type view budget
@@ -92,14 +74,16 @@ public class MainActivity extends AppCompatActivity
 
     public void openBudget(){
         //open the budget from storage
-      try {
-          Gson gson = new Gson();
-          String json = getPreferences(MODE_PRIVATE).getString("BUDGET_SAVE", "");
-          budget = gson.fromJson(json, Budget.class);
-      } catch(UnknownError e){
-          budget = new Budget(true);
-          saveBudget();
-      }
+
+        Gson gson = new Gson();
+        String json = getPreferences(MODE_PRIVATE).getString("BUDGET_SAVE", "");
+        budget = gson.fromJson(json, Budget.class);
+
+        if(budget == null) {
+            budget = new Budget(true);
+            saveBudget();
+        }
+
 //        if(budget.isMade){
 //            return true;
 //        } else{
