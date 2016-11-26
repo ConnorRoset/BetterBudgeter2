@@ -9,7 +9,16 @@ public class Luxury {
     /*
     public members for other functions
      */
+    public static final String SUBSCRIPTIONS_LUXURY = "Subscriptions";
+    public static final String HOBBY_LUXURY = "Hobby";
+    public static final String MEMBERSHIP_LUXURY = "Membership";
+    public static final String CAR_PARTS_LUXURY = "Car Parts";
+    public static final String ALCOHOL_LUXURY = "Alcohol";
+    public static final String SNACKS_LUXURY = "Snacks";
+    public static final String CLOTHING_LUXURY = "Clothing";
     public static final String OTHER_LUXURY = "Other";
+
+    public static final int NUMBER_OF_LUXURY_TYPES = 8;
     //class information
     private float amount;
     private String type;

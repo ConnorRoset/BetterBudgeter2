@@ -9,7 +9,23 @@ public class Bill {
     /*
     public items
      */
+    public static final String UTILITIES_BILL = "Utilities";
+    public static final String GROCERIES_BILL = "Groceries";
+    public static final String SUBSCRIPTIONS_BILL = "Subscriptions";
+    public static final String INSURANCE_BILL = "Insurance";
+    public static final String PAYMENT_BILL = "Payment";
+    public static final String MOBILE_BILL = "Mobile";
+    public static final String INTERNET_BILL = "Internet";
+    public static final String TUITION_BILL = "Tuition";
+    public static final String RENT_BILL = "Rent";
+    public static final String FUEL_BILL = "Fuel";
+    public static final String MEDICAL_BILL = "Medical";
+    public static final String MEMBERSHIP_BILL = "Membership";
+    public static final String SERVICES_BILL = "Services";
     public static final String OTHER_BILL = "Other";
+
+    public static final int NUMBER_OF_BILL_TYPES = 14;
+
     //class information
     private float amount;
     private String type;
