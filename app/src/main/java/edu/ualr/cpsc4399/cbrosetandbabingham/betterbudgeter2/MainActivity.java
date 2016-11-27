@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+//
+//        budget = new Budget(true);
+//        saveBudget();
         openBudget();
 
         //will eventually need to change to standard budget constructor
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    private void saveBudget(){
+    public void saveBudget(){
         //write budget to memory here
         SharedPreferences.Editor prefsEditor =  getPreferences(MODE_PRIVATE).edit();
         Gson gson = new Gson();
@@ -84,11 +87,7 @@ public class MainActivity extends AppCompatActivity
             saveBudget();
         }
 
-//        if(budget.isMade){
-//            return true;
-//        } else{
-//            return false;
-//        }
+
     }
     @Override
     public void onBackPressed() {

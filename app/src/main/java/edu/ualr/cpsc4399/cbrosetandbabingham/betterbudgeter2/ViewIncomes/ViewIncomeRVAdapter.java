@@ -31,12 +31,13 @@ public class ViewIncomeRVAdapter extends RecyclerView.Adapter<ViewIncomeRVAdapte
         TextView amount;
         TextView paid;
         Button delete;
+
         ViewIncomeViewHolder(View itemView) {
             super(itemView);
             cv = (CardView) itemView.findViewById(R.id.card_view);
             type = (TextView) itemView.findViewById(R.id.type_card_view);
             amount = (TextView) itemView.findViewById(R.id.amount_card_view);
-            paid = (ToggleButton) itemView.findViewById(R.id.paid_card_view);
+            paid = (Button) itemView.findViewById(R.id.paid_card_view);
             delete = (Button) itemView.findViewById(R.id.delete_button_card_view);
 //            cv.setOnClickListener(new View.OnClickListener() {
 //                @Override

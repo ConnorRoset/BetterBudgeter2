@@ -53,14 +53,14 @@
 
                 android:textSize="12sp" />
 
-            <ToggleButton
+            <Button
                 android:id="@+id/paid_card_view"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="Pay"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+               />
         </LinearLayout>
     </LinearLayout>
 

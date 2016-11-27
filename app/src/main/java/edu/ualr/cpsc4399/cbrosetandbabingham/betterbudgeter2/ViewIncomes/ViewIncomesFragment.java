@@ -54,15 +54,5 @@ public class ViewIncomesFragment extends Fragment {
             }
         });
 
-//        Button removeIncome = (Button)getActivity().findViewById(R.id.view_incomes_delete_button);
-//        removeIncome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                //(MainActivity)((MainActivity) getActivity()).getBudget().removeIncome();
-//                Toast.makeText(getContext(), "clicked", Toast.LENGTH_SHORT).show();
-//
-//
-//            }
-//        });
     }
 }

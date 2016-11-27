@@ -52,4 +52,7 @@ public class Bill {
         return new String[]{UTILITIES_BILL, GROCERIES_BILL, SUBSCRIPTIONS_BILL, INSURANCE_BILL, PAYMENT_BILL, MOBILE_BILL, INTERNET_BILL, TUITION_BILL, RENT_BILL, FUEL_BILL, MEDICAL_BILL, MEMBERSHIP_BILL, SERVICES_BILL};
 
     }
+    public void setPaid(Boolean paid){
+       this.paid = paid;
+    }
 }

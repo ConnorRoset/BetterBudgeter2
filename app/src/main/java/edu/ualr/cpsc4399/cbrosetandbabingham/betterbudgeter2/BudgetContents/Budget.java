@@ -39,6 +39,9 @@ public class Budget {
             incomes.add(new Income(30.00f, Income.SALARY));
             incomes.add(new Income(30.00f, Income.SALARY));
             bills.add(new Bill(21.00f, Bill.OTHER_BILL));
+            Bill bill = new Bill(22.00f, Bill.FUEL_BILL);
+                    bill.setPaid(true);
+            bills.add(bill);
             purchases.add(new Purchase(15.00f, Purchase.OTHER_PURCHASE));
 
 
@@ -92,6 +95,17 @@ public class Budget {
         return purchases;
     }
 
+
+    public void payBill(Bill bill){
+        if(bills.contains(bill)){
+            bill.setPaid(true);
+        }
+    }
+    public void unPayBill(Bill bill){
+        if(bills.contains(bill)){
+            bill.setPaid(false);
+        }
+    }
     public int getNumberUnPaidBills(){
         int count = 0;
         for(Bill bill : bills){
