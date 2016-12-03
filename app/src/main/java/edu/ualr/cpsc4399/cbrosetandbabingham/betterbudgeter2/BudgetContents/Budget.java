@@ -28,13 +28,17 @@ public class Budget {
     private float budgetRemainingForPurchases ;
     private float budgetRemainingForLuxuries;
     public boolean isMade = false;
-    public Budget(){
 
 
-    }
-    public Budget(Boolean makeTestBudget){
+    private String[] incomeTypes, billTypes, purchaseTypes, luxuryTypes;
+
+    public Budget(Boolean makeTestBudget, String[] incomeTypes, String [] billTypes, String[] purchaseTypes, String[] luxuryTypes ){
         if(makeTestBudget){
             //populate a temp budget
+            this.incomeTypes = incomeTypes;
+            this.billTypes = billTypes;
+            this.purchaseTypes = purchaseTypes;
+            this.luxuryTypes = luxuryTypes;
             incomes.add(new Income(20.00f, Income.OTHER_INCOME));
             incomes.add(new Income(30.00f, Income.SALARY));
             incomes.add(new Income(30.00f, Income.SALARY));
