@@ -55,8 +55,6 @@ public class Budget {
             this.billTypes = billTypes;
             this.purchaseTypes = purchaseTypes;
             this.luxuryTypes = luxuryTypes;
-//            budgetRemainingForPurchases = (((0.30f) * incomeTotal()) - purchaseTotal());
-//            budgetRemainingForLuxuries = (((0.20f) * incomeTotal()) - luxuryTotal());
             isMade = true;
         }
         updateBudget();
