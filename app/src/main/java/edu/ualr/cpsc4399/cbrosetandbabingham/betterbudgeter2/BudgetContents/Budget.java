@@ -145,6 +145,7 @@ public class Budget {
 
     public void addLuxury(Luxury luxury){
         luxuries.add(luxury);
+        budgetRemainingForLuxuries -=luxury.getAmount();
     }
     public void removeLuxury(Luxury luxury){
         if(luxuries.contains(luxury)){

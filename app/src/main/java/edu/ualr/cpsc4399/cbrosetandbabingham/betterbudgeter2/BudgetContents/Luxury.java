@@ -17,7 +17,7 @@ public class Luxury {
     public static final String SNACKS_LUXURY = "Snacks";
     public static final String CLOTHING_LUXURY = "Clothing";
     public static final String OTHER_LUXURY = "Other";
-
+    public static final String [] ALL_TYPES = new String[]{SUBSCRIPTIONS_LUXURY, HOBBY_LUXURY, MEMBERSHIP_LUXURY,CAR_PARTS_LUXURY,ALCOHOL_LUXURY,SNACKS_LUXURY,CLOTHING_LUXURY,OTHER_LUXURY};
     public static final int NUMBER_OF_LUXURY_TYPES = 8;
     //class information
     private float amount;
@@ -32,7 +32,10 @@ public class Luxury {
     }
     public float getAmount(){return amount;}
     public String getType(){return type;}
-    public String [] getAllTypes(){
-        return new String[]{SUBSCRIPTIONS_LUXURY, HOBBY_LUXURY, MEMBERSHIP_LUXURY,CAR_PARTS_LUXURY,ALCOHOL_LUXURY,SNACKS_LUXURY,CLOTHING_LUXURY,OTHER_LUXURY};
+    public static String [] getAllTypes(){
+        return ALL_TYPES;
+    }
+    public static String getTypeAtIndex(int index){
+        return ALL_TYPES[index];
     }
 }
