@@ -56,9 +56,9 @@ public class AddLuxuryFragment extends Fragment {
         final String[] types =((MainActivity) getActivity()).getBudget().getLuxuryTypes();
 
         //populate the radiogroup:
-        for (int i = 0; i < types.length; i++) {
+        for (String type : types) {
             RadioButton rb = new RadioButton(getContext());
-            rb.setText(types[i]);
+            rb.setText(type);
             selectType.addView(rb);
         }
 

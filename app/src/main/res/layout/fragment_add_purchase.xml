@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:weightSum="10">
 
-    <android.support.v7.widget.RecyclerView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
-        android:id="@+id/add_purchase_list_of_purchase_types_recycler_view"/>
+        android:layout_weight="8">
+
+        <RadioGroup
+            android:id="@+id/add_purchase_list_of_purchase_types_radio_group"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent" />
+    </ScrollView>
 
     <EditText
+        android:id="@+id/add_purchase_purchase_amount_edit_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/add_purchase_purchase_amount_edit_text" />
+        android:inputType="numberDecimal" />
 
     <Button
-        android:text="@string/submit"
+        android:id="@+id/add_purchase_submit_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/add_purchase_submit_button" />
+        android:text="@string/submit" />
 </LinearLayout>

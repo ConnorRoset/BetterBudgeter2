@@ -1,7 +1,6 @@
 package edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents;
 
 
-
 import java.util.ArrayList;
 
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.MainActivity;
@@ -13,8 +12,8 @@ import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.MainActivity;
 
 public class Budget {
     private ArrayList<Income> incomes = new ArrayList<>();
-    private ArrayList<Bill>bills = new ArrayList<>();
-    private ArrayList<Luxury>luxuries = new ArrayList<>();
+    private ArrayList<Bill> bills = new ArrayList<>();
+    private ArrayList<Luxury> luxuries = new ArrayList<>();
 
     public float getBudgetRemainingForPurchases() {
         return budgetRemainingForPurchases;
@@ -24,8 +23,8 @@ public class Budget {
         return budgetRemainingForLuxuries;
     }
 
-    private ArrayList<Purchase>purchases = new ArrayList<>();
-    private float budgetRemainingForPurchases ;
+    private ArrayList<Purchase> purchases = new ArrayList<>();
+    private float budgetRemainingForPurchases;
     private float budgetRemainingForLuxuries;
     public boolean isMade = false;
 
@@ -48,8 +47,8 @@ public class Budget {
         return luxuryTypes;
     }
 
-    public Budget(Boolean makeTestBudget, String[] incomeTypes, String [] billTypes, String[] purchaseTypes, String[] luxuryTypes ){
-        if(makeTestBudget){
+    public Budget(Boolean makeTestBudget, String[] incomeTypes, String[] billTypes, String[] purchaseTypes, String[] luxuryTypes) {
+        if (makeTestBudget) {
             //populate a temp budget
             this.incomeTypes = incomeTypes;
             this.billTypes = billTypes;
@@ -60,121 +59,139 @@ public class Budget {
             incomes.add(new Income(30.00f, incomeTypes[2]));
             bills.add(new Bill(21.00f, billTypes[1]));
             Bill bill = new Bill(22.00f, billTypes[8]);
-                    bill.setPaid(true);
+            bill.setPaid(true);
+
             bills.add(bill);
-            purchases.add(new Purchase(15.00f,purchaseTypes[5] ));
+            purchases.add(new Purchase(15.00f, purchaseTypes[5]));
 
 
-            budgetRemainingForPurchases = ((0.30f)*incomeTotal()) - purchaseTotal();
-            budgetRemainingForLuxuries = (((0.20f)*incomeTotal()) - luxuryTotal());
+            budgetRemainingForPurchases = ((0.30f) * incomeTotal()) - purchaseTotal();
+            budgetRemainingForLuxuries = (((0.20f) * incomeTotal()) - luxuryTotal());
 
 
             isMade = true;
         }
     }
-    public float incomeTotal(){
+
+    public float incomeTotal() {
         float temp = 0f;
-        for(int i = 0; i<incomes.size(); i++){
+        for (int i = 0; i < incomes.size(); i++) {
             temp += incomes.get(i).getAmount();
         }
         return temp;
     }
-    public float billTotal(){
+
+    public float billTotal() {
         float temp = 0;
-        for(int i = 0; i<bills.size(); i++){
+        for (int i = 0; i < bills.size(); i++) {
             temp += bills.get(i).getAmount();
         }
         return temp;
     }
-    public float luxuryTotal(){
+
+    public float luxuryTotal() {
         float temp = 0;
-        for(int i = 0; i<luxuries.size(); i++){
+        for (int i = 0; i < luxuries.size(); i++) {
             temp += luxuries.get(i).getAmount();
         }
         return temp;
-    };
-    public float purchaseTotal(){
+    }
+
+    ;
+
+    public float purchaseTotal() {
         float temp = 0;
-        for(int i = 0; i<purchases.size(); i++){
+        for (int i = 0; i < purchases.size(); i++) {
             temp += purchases.get(i).getAmount();
         }
         return temp;
     }
 
 
-    public ArrayList<Income> getIncomes(){
+    public ArrayList<Income> getIncomes() {
         return incomes;
     }
-    public ArrayList<Bill> getBills(){
+
+    public ArrayList<Bill> getBills() {
         return bills;
     }
-    public ArrayList<Luxury> getLuxuries(){
+
+    public ArrayList<Luxury> getLuxuries() {
         return luxuries;
     }
-    public ArrayList<Purchase> getPurchases(){
+
+    public ArrayList<Purchase> getPurchases() {
         return purchases;
     }
 
 
-    public void payBill(Bill bill){
-        if(bills.contains(bill)){
+    public void payBill(Bill bill) {
+        if (bills.contains(bill)) {
             bill.setPaid(true);
         }
     }
-    public void unPayBill(Bill bill){
-        if(bills.contains(bill)){
+
+    public void unPayBill(Bill bill) {
+        if (bills.contains(bill)) {
             bill.setPaid(false);
         }
     }
-    public int getNumberUnPaidBills(){
+
+    public int getNumberUnPaidBills() {
         int count = 0;
-        for(Bill bill : bills){
-            if(!bill.isPaid()){
+        for (Bill bill : bills) {
+            if (!bill.isPaid()) {
                 count++;
             }
         }
         return count;
     }
-    public void addIncome(Income income){
+
+    public void addIncome(Income income) {
         incomes.add(income);
     }
-    public void remvomeIncome(Income income){
+
+    public void remvomeIncome(Income income) {
         //Find that income, remove it from internal list
-        if(incomes.contains(income)){
+        if (incomes.contains(income)) {
             incomes.remove(income);
         }
     }
 
-    public void addPurchase(Purchase purchase){
+    public void addPurchase(Purchase purchase) {
         purchases.add(purchase);
+        budgetRemainingForPurchases -= purchase.getAmount();
     }
-    public void removePurchase(Purchase purchase){
-        if(purchases.contains(purchase)){
+
+    public void removePurchase(Purchase purchase) {
+        if (purchases.contains(purchase)) {
             purchases.remove(purchase);
         }
     }
 
-    public void addBill(Bill bill){
+    public void addBill(Bill bill) {
         bills.add(bill);
     }
-    public void removeBill(Bill bill){
-        if(bills.contains(bill)){
+
+    public void removeBill(Bill bill) {
+        if (bills.contains(bill)) {
             bills.remove(bill);
         }
     }
 
-    public void addLuxury(Luxury luxury){
+    public void addLuxury(Luxury luxury) {
         luxuries.add(luxury);
-        budgetRemainingForLuxuries -=luxury.getAmount();
+        budgetRemainingForLuxuries -= luxury.getAmount();
     }
-    public void removeLuxury(Luxury luxury){
-        if(luxuries.contains(luxury)){
+
+    public void removeLuxury(Luxury luxury) {
+        if (luxuries.contains(luxury)) {
             luxuries.remove(luxury);
         }
     }
 
     //will need to call in on create method of main to see if budget needs to be refreshed
-    public void resetMonthlyBudget(){
+    public void resetMonthlyBudget() {
         /*
         if(startofnewmonth){
             clear purchases
