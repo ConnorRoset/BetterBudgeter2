@@ -54,7 +54,7 @@ public class ViewLuxuriesRVAdapter extends RecyclerView.Adapter<ViewLuxuriesRVAd
     @Override
     public void onBindViewHolder(final ViewLuxuriesViewHolder viewLuxuriesViewHolder, final int i){
         viewLuxuriesViewHolder.type.setText(luxuries.get(i).getType());
-        viewLuxuriesViewHolder.amount.setText(String.valueOf(luxuries.get(i).getAmount()));
+        viewLuxuriesViewHolder.amount.setText(String.valueOf(luxuries.get(viewLuxuriesViewHolder.getAdapterPosition()).getAmount()));
 //        viewPurchasesViewHolder.paid.setText("");
         viewLuxuriesViewHolder.paid.setVisibility(View.INVISIBLE);
         viewLuxuriesViewHolder.delete.setVisibility(View.INVISIBLE);

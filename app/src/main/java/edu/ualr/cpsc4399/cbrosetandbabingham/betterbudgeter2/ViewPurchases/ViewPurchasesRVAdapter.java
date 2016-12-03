@@ -55,7 +55,7 @@ public class ViewPurchasesRVAdapter extends RecyclerView.Adapter<ViewPurchasesRV
     @Override
     public void onBindViewHolder(final ViewPurchasesViewHolder viewPurchasesViewHolder, final int i) {
         viewPurchasesViewHolder.type.setText(purchases.get(i).getType());
-        viewPurchasesViewHolder.amount.setText(String.valueOf(purchases.get(i).getAmount()));
+        viewPurchasesViewHolder.amount.setText(String.valueOf(purchases.get(viewPurchasesViewHolder.getAdapterPosition()).getAmount()));
 //        viewPurchasesViewHolder.paid.setText("");
         viewPurchasesViewHolder.paid.setVisibility(View.INVISIBLE);
         viewPurchasesViewHolder.delete.setVisibility(View.INVISIBLE);

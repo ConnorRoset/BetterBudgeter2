@@ -71,7 +71,7 @@ public class ViewBillsRVAdapter extends RecyclerView.Adapter<ViewBillsRVAdapter.
         viewBillsViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mBudget.removeBill(bills.get(i));
+                mBudget.removeBill(bills.get(viewBillsViewHolder.getAdapterPosition()));
                 ((MainActivity)context).saveBudget();
                 notifyDataSetChanged();
                 //remove bill from budget

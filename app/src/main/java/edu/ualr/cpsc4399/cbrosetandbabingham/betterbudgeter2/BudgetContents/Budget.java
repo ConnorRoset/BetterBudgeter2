@@ -65,8 +65,8 @@ public class Budget {
 
     public void updateBudget() {
         totalRemainingBudget = incomeTotal() - billTotal();
-        budgetRemainingForPurchases = ((float) 0.7* totalRemainingBudget) - purchaseTotal();
-        budgetRemainingForLuxuries = ((float) 0.3* totalRemainingBudget) - luxuryTotal();
+        budgetRemainingForPurchases = ((float) 0.7 * totalRemainingBudget) - purchaseTotal();
+        budgetRemainingForLuxuries = ((float) 0.3 * totalRemainingBudget) - luxuryTotal();
     }
 
     public float incomeTotal() {
@@ -163,11 +163,6 @@ public class Budget {
 
     }
 
-    public void removePurchase(Purchase purchase) {
-        if (purchases.contains(purchase)) {
-            purchases.remove(purchase);
-        }
-    }
 
     public void addBill(Bill bill) {
         bills.add(bill);
@@ -186,31 +181,22 @@ public class Budget {
         budgetRemainingForLuxuries -= luxury.getAmount();
     }
 
-    public void removeLuxury(Luxury luxury) {
-        if (luxuries.contains(luxury)) {
-            luxuries.remove(luxury);
-        }
-    }
-
     //will need to call in on create method of main to see if budget needs to be refreshed
     public void resetMonthlyBudget() {
-        /*
-        if(startofnewmonth){
-            clear purchases
-            restore income amount to original
-            set all expenses to unpaid
-         */
+
         for (Purchase purchase : purchases
-             ) {
+                ) {
             purchases.remove(purchase);
         }
 
-        for (Luxury luxury: luxuries
-             ) {
-            luxuries.remove(luxury);
+        for (Luxury luxury : luxuries
+                ) {
+            if (luxuries.contains(luxury)) {
+                luxuries.remove(luxury);
+            }
         }
-        for (Bill bill :bills
-             ) {
+        for (Bill bill : bills
+                ) {
             bill.setPaid(false);
         }
         budgetRemainingForLuxuries = 0;

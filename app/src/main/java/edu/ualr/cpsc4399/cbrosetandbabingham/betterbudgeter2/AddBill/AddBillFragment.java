@@ -75,10 +75,10 @@ public class AddBillFragment extends Fragment {
                     ft.commit();
                 }
 
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ViewBudgetFragment vbf = new ViewBudgetFragment();
-                ft.replace(R.id.fragment_container, vbf);
-                ft.commit();
+//                FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                ViewBudgetFragment vbf = new ViewBudgetFragment();
+//                ft.replace(R.id.fragment_container, vbf);
+//                ft.commit();
             }
         });
     }
