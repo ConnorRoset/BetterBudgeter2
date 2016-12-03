@@ -1,5 +1,6 @@
 package edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.ViewIncomes;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.ToggleButton;
 
 import java.util.List;
 
+import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Budget;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Income;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.BudgetContents.Purchase;
 import edu.ualr.cpsc4399.cbrosetandbabingham.betterbudgeter2.MainActivity;
@@ -50,9 +52,12 @@ public class ViewIncomeRVAdapter extends RecyclerView.Adapter<ViewIncomeRVAdapte
     }
 
     private List<Income> incomes;
-
-    public ViewIncomeRVAdapter(List<Income> incomes) {
+    private Context context;
+    private Budget mBudget;
+    public ViewIncomeRVAdapter(List<Income> incomes, Context context) {
         this.incomes = incomes;
+        this.context = context;
+        mBudget = ((MainActivity)context).getBudget();
     }
 
     @Override
@@ -77,7 +82,8 @@ public class ViewIncomeRVAdapter extends RecyclerView.Adapter<ViewIncomeRVAdapte
         viewIncomeViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                incomes.remove(viewIncomeViewHolder.getAdapterPosition());
+               mBudget.removeIncome(incomes.get(viewIncomeViewHolder.getAdapterPosition()));
+                //incomes.remove(viewIncomeViewHolder.getAdapterPosition());
                 notifyDataSetChanged();
             }
         });

@@ -38,5 +38,14 @@ public class ViewBudgetFragment extends Fragment {
         //unpaid bills
         TextView unPaidBills = (TextView) getActivity().findViewById(R.id.view_budget_unpaid_bills_number_remaining_text_view);
         unPaidBills.setText(String.valueOf(((MainActivity)getActivity()).getBudget().getNumberUnPaidBills()));
+        Button button = (Button) getActivity().findViewById(R.id.reset_monthly_budget_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).getBudget().resetMonthlyBudget();
+//                ((MainActivity) getActivity()).getBudget().updateBudget();
+                ((MainActivity) getActivity()).saveBudget();
+            }
+        });
     }
 }

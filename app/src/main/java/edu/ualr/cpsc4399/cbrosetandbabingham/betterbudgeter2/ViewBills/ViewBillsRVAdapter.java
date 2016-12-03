@@ -91,7 +91,7 @@ public class ViewBillsRVAdapter extends RecyclerView.Adapter<ViewBillsRVAdapter.
                     //change bill to PAID, update the budget
                     viewBillsViewHolder.paid.setEnabled(false);
                     viewBillsViewHolder.paid.setText("Paid");
-                    mBudget.payBill(bills.get(i));
+                    mBudget.payBill(bills.get(viewBillsViewHolder.getAdapterPosition()));
                     ((MainActivity)context).saveBudget();
                     notifyDataSetChanged();
                     viewBillsViewHolder.paid.setEnabled(false);

@@ -65,8 +65,8 @@ public class Budget {
 
     public void updateBudget() {
         totalRemainingBudget = incomeTotal() - billTotal();
-        budgetRemainingForPurchases = ((float) 0.7* totalRemainingBudget) - budgetRemainingForPurchases;
-        budgetRemainingForLuxuries = ((float) 0.3* totalRemainingBudget) - budgetRemainingForLuxuries;
+        budgetRemainingForPurchases = ((float) 0.7* totalRemainingBudget) - purchaseTotal();
+        budgetRemainingForLuxuries = ((float) 0.3* totalRemainingBudget) - luxuryTotal();
     }
 
     public float incomeTotal() {
@@ -149,7 +149,7 @@ public class Budget {
 
     }
 
-    public void remvomeIncome(Income income) {
+    public void removeIncome(Income income) {
         //Find that income, remove it from internal list
         if (incomes.contains(income)) {
             incomes.remove(income);
@@ -213,6 +213,8 @@ public class Budget {
              ) {
             bill.setPaid(false);
         }
+        budgetRemainingForLuxuries = 0;
+        budgetRemainingForLuxuries = 0;
         updateBudget();
     }
 }

@@ -41,7 +41,7 @@ public class ViewIncomesFragment extends Fragment {
 //        rv.setHasFixedSize(true);
 
 
-        adapter = new ViewIncomeRVAdapter(((MainActivity)getActivity()).getBudget().getIncomes());
+        adapter = new ViewIncomeRVAdapter(((MainActivity)getActivity()).getBudget().getIncomes(), getContext());
         rv.setAdapter(adapter);
         Button addIncome = (Button)getActivity().findViewById(R.id.view_incomes_add_button);
         addIncome.setOnClickListener(new View.OnClickListener() {
