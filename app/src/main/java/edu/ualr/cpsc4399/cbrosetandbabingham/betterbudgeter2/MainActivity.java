@@ -81,9 +81,8 @@ public class MainActivity extends AppCompatActivity
         Gson gson = new Gson();
         String json = getPreferences(MODE_PRIVATE).getString("BUDGET_SAVE", "");
         budget = gson.fromJson(json, Budget.class);
-
         if(budget == null) {
-            budget = new Budget(true);
+            budget = new Budget(true, getResources().getStringArray(R.array.income), getResources().getStringArray(R.array.bills), getResources().getStringArray(R.array.purchase), getResources().getStringArray(R.array.luxury));
             saveBudget();
         }
 

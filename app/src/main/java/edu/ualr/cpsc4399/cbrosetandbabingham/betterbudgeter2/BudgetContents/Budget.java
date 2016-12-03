@@ -32,6 +32,22 @@ public class Budget {
 
     private String[] incomeTypes, billTypes, purchaseTypes, luxuryTypes;
 
+    public String[] getIncomeTypes() {
+        return incomeTypes;
+    }
+
+    public String[] getBillTypes() {
+        return billTypes;
+    }
+
+    public String[] getPurchaseTypes() {
+        return purchaseTypes;
+    }
+
+    public String[] getLuxuryTypes() {
+        return luxuryTypes;
+    }
+
     public Budget(Boolean makeTestBudget, String[] incomeTypes, String [] billTypes, String[] purchaseTypes, String[] luxuryTypes ){
         if(makeTestBudget){
             //populate a temp budget
@@ -39,14 +55,14 @@ public class Budget {
             this.billTypes = billTypes;
             this.purchaseTypes = purchaseTypes;
             this.luxuryTypes = luxuryTypes;
-            incomes.add(new Income(20.00f, Income.OTHER_INCOME));
-            incomes.add(new Income(30.00f, Income.SALARY));
-            incomes.add(new Income(30.00f, Income.SALARY));
-            bills.add(new Bill(21.00f, Bill.OTHER_BILL));
-            Bill bill = new Bill(22.00f, Bill.FUEL_BILL);
+            incomes.add(new Income(20.00f, incomeTypes[0]));
+            incomes.add(new Income(30.00f, incomeTypes[1]));
+            incomes.add(new Income(30.00f, incomeTypes[2]));
+            bills.add(new Bill(21.00f, billTypes[1]));
+            Bill bill = new Bill(22.00f, billTypes[8]);
                     bill.setPaid(true);
             bills.add(bill);
-            purchases.add(new Purchase(15.00f, Purchase.OTHER_PURCHASE));
+            purchases.add(new Purchase(15.00f,purchaseTypes[5] ));
 
 
             budgetRemainingForPurchases = ((0.30f)*incomeTotal()) - purchaseTotal();

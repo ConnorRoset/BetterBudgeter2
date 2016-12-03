@@ -53,9 +53,10 @@ public class AddLuxuryFragment extends Fragment {
         Button submit = (Button) getActivity().findViewById(R.id.add_luxury_submit_button);
         final EditText amount = (EditText) getActivity().findViewById(R.id.add_luxury_luxury_amount_edit_text);
         final RadioGroup selectType = (RadioGroup) getActivity().findViewById(R.id.add_luxury_radio_group);
-        final String[] types = Luxury.getAllTypes();
+        final String[] types =((MainActivity) getActivity()).getBudget().getLuxuryTypes();
+
         //populate the radiogroup:
-        for (int i = 0; i < Luxury.getAllTypes().length; i++) {
+        for (int i = 0; i < types.length; i++) {
             RadioButton rb = new RadioButton(getContext());
             rb.setText(types[i]);
             selectType.addView(rb);
@@ -65,7 +66,7 @@ public class AddLuxuryFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //go back to view budget
-                Luxury lux = new Luxury(45.00f, Luxury.OTHER_LUXURY);
+                Luxury lux;//= new Luxury(45.00f, Luxury.OTHER_LUXURY);
 
                 //get the index of the radio group that was added
                 int idx = selectType.indexOfChild(selectType.findViewById(selectType.getCheckedRadioButtonId()));
@@ -78,7 +79,7 @@ public class AddLuxuryFragment extends Fragment {
 
                     //convert that value and the amount to a luxury, put that luxury in the budget
 
-                   lux = new Luxury(Float.valueOf( amount.getText().toString()), Luxury.getTypeAtIndex(idx));
+                   lux = new Luxury(Float.valueOf( amount.getText().toString()), types[idx]);
                     //add that luxury to the budget
                     ((MainActivity) getActivity()).getBudget().addLuxury(lux);
                      ((MainActivity) getActivity()).saveBudget();
