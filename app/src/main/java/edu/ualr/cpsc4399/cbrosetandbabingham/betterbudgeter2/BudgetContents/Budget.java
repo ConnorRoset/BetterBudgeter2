@@ -26,6 +26,7 @@ public class Budget {
     private ArrayList<Purchase> purchases = new ArrayList<>();
     private float budgetRemainingForPurchases;
     private float budgetRemainingForLuxuries;
+    private float totalRemainingBudget;
     public boolean isMade = false;
 
 
@@ -54,23 +55,18 @@ public class Budget {
             this.billTypes = billTypes;
             this.purchaseTypes = purchaseTypes;
             this.luxuryTypes = luxuryTypes;
-            incomes.add(new Income(20.00f, incomeTypes[0]));
-            incomes.add(new Income(30.00f, incomeTypes[1]));
-            incomes.add(new Income(30.00f, incomeTypes[2]));
-            bills.add(new Bill(21.00f, billTypes[1]));
-            Bill bill = new Bill(22.00f, billTypes[8]);
-            bill.setPaid(true);
-
-            bills.add(bill);
-            purchases.add(new Purchase(15.00f, purchaseTypes[5]));
-
-
-            budgetRemainingForPurchases = ((0.30f) * incomeTotal()) - purchaseTotal();
-            budgetRemainingForLuxuries = (((0.20f) * incomeTotal()) - luxuryTotal());
-
-
+//            budgetRemainingForPurchases = (((0.30f) * incomeTotal()) - purchaseTotal());
+//            budgetRemainingForLuxuries = (((0.20f) * incomeTotal()) - luxuryTotal());
             isMade = true;
         }
+        updateBudget();
+    }
+
+
+    public void updateBudget() {
+        totalRemainingBudget = incomeTotal() - billTotal();
+        budgetRemainingForPurchases = ((float) 0.7* totalRemainingBudget) - budgetRemainingForPurchases;
+        budgetRemainingForLuxuries = ((float) 0.3* totalRemainingBudget) - budgetRemainingForLuxuries;
     }
 
     public float incomeTotal() {
@@ -97,7 +93,6 @@ public class Budget {
         return temp;
     }
 
-    ;
 
     public float purchaseTotal() {
         float temp = 0;
@@ -149,6 +144,9 @@ public class Budget {
 
     public void addIncome(Income income) {
         incomes.add(income);
+        //budgetRemainingForPurchases = incomeTotal();
+        updateBudget();
+
     }
 
     public void remvomeIncome(Income income) {
@@ -156,11 +154,13 @@ public class Budget {
         if (incomes.contains(income)) {
             incomes.remove(income);
         }
+        updateBudget();
     }
 
     public void addPurchase(Purchase purchase) {
         purchases.add(purchase);
         budgetRemainingForPurchases -= purchase.getAmount();
+
     }
 
     public void removePurchase(Purchase purchase) {
@@ -171,12 +171,14 @@ public class Budget {
 
     public void addBill(Bill bill) {
         bills.add(bill);
+        updateBudget();
     }
 
     public void removeBill(Bill bill) {
         if (bills.contains(bill)) {
             bills.remove(bill);
         }
+        updateBudget();
     }
 
     public void addLuxury(Luxury luxury) {
@@ -198,5 +200,19 @@ public class Budget {
             restore income amount to original
             set all expenses to unpaid
          */
+        for (Purchase purchase : purchases
+             ) {
+            purchases.remove(purchase);
+        }
+
+        for (Luxury luxury: luxuries
+             ) {
+            luxuries.remove(luxury);
+        }
+        for (Bill bill :bills
+             ) {
+            bill.setPaid(false);
+        }
+        updateBudget();
     }
 }

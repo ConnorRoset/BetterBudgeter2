@@ -47,8 +47,10 @@ public class MainActivity extends AppCompatActivity
 //        budget = new Budget(true);
 //        saveBudget();
         openBudget();
-
-        //will eventually need to change to standard budget constructor
+//        budget = new Budget(true, getResources().getStringArray(R.array.income), getResources().getStringArray(R.array.bills), getResources().getStringArray(R.array.purchase), getResources().getStringArray(R.array.luxury));
+//        saveBudget();
+        budget.updateBudget();
+        saveBudget();
 
         //make fragment of type view budget
         ViewBudgetFragment fragment = new ViewBudgetFragment();
