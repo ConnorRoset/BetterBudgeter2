@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="bills">
-        <item>Fuel</item>
-        <item>Groceries</item>
         <item>Insurance</item>
         <item>Internet</item>
         <item>Medical</item>
@@ -26,6 +24,7 @@
         <item>Alcohol</item>
         <item>Car Parts</item>
         <item>Clothing</item>
+        <item>Games</item>
         <item>Hobby</item>
         <item>Membership</item>
         <item>Snacks</item>
@@ -33,14 +32,12 @@
         <item>Other</item>
     </string-array>
     <string-array name="purchase">
-        <item>Alcohol/Programming Juices</item>
         <item>Car Parts</item>
-        <item>Clothing</item>
         <item>Drink</item>
         <item>Food</item>
         <item>Fuel</item>
-        <item>Games</item>
         <item>Gift</item>
+        <item>Groceries</item>
         <item>Medical</item>
         <item>Repairs</item>
         <item>Services</item>
